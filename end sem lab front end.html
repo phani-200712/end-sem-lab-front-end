@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC College - Home Page</title>
+
+    <style>
+        /* GENERAL CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #102542;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #ffcc00;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* CINEMATIC HERO SECTION */
+        .hero {
+            height: 450px;
+            background:
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("https://images.unsplash.com/photo-1562774053-701939374585")
+                center/cover no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #ffcc00;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        /* COMMON SECTION */
+        section {
+            padding: 45px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #102542;
+        }
+
+        /* ABOUT */
+        .about {
+            text-align: center;
+        }
+
+        /* FLEXBOX FACILITIES */
+        .facilities {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            flex: 1 1 200px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .card h3 {
+            color: #102542;
+            margin-bottom: 10px;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #102542;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e8eef5;
+        }
+
+        /* ADMISSION FORM */
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            background: #102542;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #102542;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero {
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 30px 5%;
+            }
+
+            .facilities {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 8px 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            header h2 {
+                font-size: 20px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>ABC COLLEGE</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#admission">Admission</a>
+        </nav>
+    </header>
+
+    <!-- HOME / CINEMATIC SECTION -->
+    <main>
+        <section class="hero" id="home">
+            <h1>Welcome to ABC College</h1>
+            <p>Learn Today, Lead Tomorrow</p>
+            <button onclick="location.href='#admission'">
+                Apply Now
+            </button>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+            <h2>About Our College</h2>
+            <p>
+                ABC College provides quality education and excellent
+                learning opportunities. We encourage students to develop
+                technical skills, creativity and leadership qualities.
+            </p>
+        </section>
+
+        <!-- FACILITIES USING FLEXBOX -->
+        <section id="facilities">
+            <h2>Our Facilities</h2>
+
+            <div class="facilities">
+
+                <div class="card">
+                    <h3>Library</h3>
+                    <p>Large collection of books and study materials.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Computer Labs</h3>
+                    <p>Modern computer labs for practical learning.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Sports</h3>
+                    <p>Indoor and outdoor sports facilities.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COURSES TABLE -->
+        <section id="courses">
+            <h2>Available Courses</h2>
+
+            <table>
+                <tr>
+                    <th>S.No</th>
+                    <th>Course</th>
+                    <th>Duration</th>
+                    <th>Eligibility</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>B.Tech</td>
+                    <td>4 Years</td>
+                    <td>12th / Intermediate</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>MBA</td>
+                    <td>2 Years</td>
+                    <td>Graduation</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>MCA</td>
+                    <td>2 Years</td>
+                    <td>Graduation</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- ADMISSION FORM -->
+        <section id="admission">
+            <h2>Admission Registration Form</h2>
+
+            <div class="form-container">
+
+                <form>
+                    <label for="name">Student Name:</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone"
+                           placeholder="Enter phone number">
+
+                    <label for="course">Select Course:</label>
+                    <select id="course">
+                        <option>B.Tech</option>
+                        <option>MBA</option>
+                        <option>MCA</option>
+                    </select>
+
+                    <label for="message">Address:</label>
+                    <textarea id="message"
+                              placeholder="Enter your address"></textarea>
+
+                    <button type="submit">Submit Application</button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 ABC College. All Rights Reserved.</p>
+        <p>Email: info@abccollege.com</p>
+    </footer>
+
+</body>
+</html>
